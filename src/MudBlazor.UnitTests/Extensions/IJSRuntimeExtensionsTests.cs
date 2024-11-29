@@ -166,7 +166,7 @@ namespace MudBlazor.UnitTests
             result2.success.Should().BeFalse();
             result2.value.Should().Be("fallback2");
         }
-        
+
 #if DEBUG
         [Test]
         public async Task InvokeAsyncIgnoreErrors_ShouldThrow_WhenDebugJSException()
@@ -182,7 +182,7 @@ namespace MudBlazor.UnitTests
             await act1.Should().ThrowAsync<JSException>();
             await act2.Should().ThrowAsync<JSException>();
         }
-#else        
+#else
         [Test]
         public async Task InvokeAsyncIgnoreErrors_ShouldSucceed_WhenReleaseJSException()
         {

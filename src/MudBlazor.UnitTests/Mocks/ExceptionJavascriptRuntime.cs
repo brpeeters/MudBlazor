@@ -9,7 +9,7 @@ namespace MudBlazor.UnitTests.Mocks;
 public class ExceptionJavascriptRuntime : IJSRuntime
 {
     public Func<Exception> ExceptionFactory { get; set; } = () => new JSException("An error occurred when invoking JavaScript function.");
-    
+
     public ValueTask<TValue> InvokeAsync<TValue>(string identifier, object[] args)
     {
         throw ExceptionFactory();
